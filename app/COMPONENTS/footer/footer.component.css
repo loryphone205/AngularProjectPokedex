@@ -1,0 +1,15 @@
+.contenitore {
+    background-color: rgb(248, 255, 146);
+    height: 5vh;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    padding: 0.3rem;
+}

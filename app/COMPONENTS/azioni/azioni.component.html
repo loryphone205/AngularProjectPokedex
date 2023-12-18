@@ -1,0 +1,95 @@
+<div
+  *ngIf="azioneDiIngresso === 'aggiungi' || azioneDiIngresso === 'modifica'"
+  class="whole-thing"
+>
+  <form [formGroup]="actionForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome Squadra</mat-label>
+      <input
+        formControlName="nomeSquadra"
+        matInput
+        placeholder="Inserisci Nome Squadra"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nome Allenatore</mat-label>
+      <input
+        formControlName="nomeTrainer"
+        matInput
+        placeholder="Non mettere Ash ti prego"
+      />
+    </mat-form-field>
+  </form>
+  <form [formGroup]="nomiPokeForm">
+    <div class="allSelect">
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke1">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke2">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke3">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke4">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke5">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seleziona Pokémon</mat-label>
+        <mat-select formControlName="poke6">
+          <mat-option
+            *ngFor="let item of risultato"
+            [value]="item.name | titlecase"
+            >{{ item.name | titlecase }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button
+      type="submit"
+      mat-raised-button
+      [disabled]="actionForm.invalid && nomiPokeForm.invalid"
+      (click)="inviaForm()"
+    >
+      Invia Form
+    </button>
+  </form>
+</div>

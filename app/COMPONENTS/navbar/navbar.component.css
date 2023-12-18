@@ -1,0 +1,24 @@
+mat-toolbar {
+    background-color: rgb(13, 43, 103);
+    opacity: 1;
+    height: 8vh !important;
+    padding: 0.3rem;
+}
+
+.example-spacer {
+    flex: auto;
+}
+
+span {
+    color: white;
+}
+
+mat-toolbar > button {
+    color: white;
+}
+
+div {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+}

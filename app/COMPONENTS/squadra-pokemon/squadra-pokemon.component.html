@@ -1,0 +1,60 @@
+<div class="whole-thing" *ngIf="azioneSquadraPokemon === 'visualizza'">
+  <div class="mat-elevation-z8" *ngIf="squadre.length > 0">
+    <button mat-raised-button class="aggiungi" (click)="cambiaFormAggiungi()">
+      Aggiungi
+    </button>
+    <table mat-table [dataSource]="squadre">
+      <ng-container matColumnDef="Nome Allenatore">
+        <th mat-header-cell *matHeaderCellDef>Nome Allenatore</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.nomeTrainer | titlecase }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Nome Squadra">
+        <th mat-header-cell *matHeaderCellDef>Nome Squadra</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.nomeSquadra | titlecase }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Squadra Pokémon">
+        <th mat-header-cell *matHeaderCellDef>Nome Pokémon</th>
+        <td mat-cell *matCellDef="let element">
+          <span *ngFor="let item of element.nomiPoke"
+            >{{ item | titlecase }}<br
+          /></span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Azioni">
+        <th mat-header-cell *matHeaderCellDef>Azioni</th>
+        <td mat-cell *matCellDef="let element; let j = index">
+          <div class="bottoni">
+            <button mat-raised-button (click)="cambiaFormModifica(j)">
+              Modifica
+            </button>
+            <button mat-raised-button (click)="elimina(j)">Elimina</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div class="noSquad" *ngIf="squadre.length === 0">
+    <h1>Non sono presenti squadre!</h1>
+    <h2>Vuole aggiungerle?</h2>
+    <button mat-raised-button class="aggiungi" (click)="cambiaFormAggiungi()">
+      Aggiungi
+    </button>
+  </div>
+</div>
+<app-azioni
+  [squadraDiIngresso]="squadre"
+  [azioneDiIngresso]="azioneSquadraPokemon"
+  (squadraDiRitorno)="aggioraSquadre($event)"
+  (azioneDiRitorno)="cambiaVisualizzazione($event)"
+  [indexPadre]="index"
+></app-azioni>

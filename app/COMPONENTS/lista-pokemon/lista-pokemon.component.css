@@ -1,0 +1,24 @@
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+  
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+
+.lista-body {
+  background: rgb(36,1,237);
+background: radial-gradient(circle, rgba(36,1,237,1) 0%, rgba(8,129,161,1) 44%, rgba(0,0,142,1) 100%);
+}
+
+table {
+  background-color: transparent;
+}
+
+th, td {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}

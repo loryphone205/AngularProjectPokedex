@@ -1,0 +1,32 @@
+.benvenuti {
+    background-color: rgb(1, 74, 153);
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    color: whitesmoke;
+}
+
+.tutorial {
+    color: white;
+}
+
+.tutorial > h1, p {
+    margin: 0px;
+    text-align: center;
+}
+
+.whole-thing {
+    height: 180%;
+    background: rgb(36,1,237);
+  background: radial-gradient(circle, rgba(36,1,237,1) 0%, rgba(8,129,161,1) 44%, rgba(0,0,142,1) 100%);
+}
+
+

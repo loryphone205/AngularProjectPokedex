@@ -1,0 +1,12 @@
+
+.whole-thing {
+    height: 110%;
+    background: rgb(36,1,237);
+  background: radial-gradient(circle, rgba(36,1,237,1) 0%, rgba(8,129,161,1) 44%, rgba(0,0,142,1) 100%);
+  text-align: center;
+}
+
+mat-form-field {
+    margin: 10px
+}
+

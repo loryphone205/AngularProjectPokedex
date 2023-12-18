@@ -1,0 +1,31 @@
+<div class="navbar-container">
+  <mat-toolbar class="shadow">
+    <button
+      mat-icon-button
+      class="example-icon"
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="cambioRottaHomepage()">Homepage</button>
+      <button mat-menu-item (click)="cambioRottaLista()">Lista Pokémon</button>
+      <button mat-menu-item (click)="cambioRottaSquadra()">
+        Squadra Pokémon
+      </button>
+    </mat-menu>
+    <span>{{ titolo }}</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Help Icon"
+    >
+      <mat-icon>help_outline</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Share Icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
